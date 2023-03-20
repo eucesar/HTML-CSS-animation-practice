@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000;
+
+}
+
+.netflix{
+    width: 140px;
+    height: 250px;
+    position: relative;
+    background: linear-gradient(
+        /*faz um quadrado - corta em 90 graus o quadrado*/
+        90deg,
+
+        #b1060e 0px,
+        #b1060e 50px,
+
+        /*deixar o meio transparente*/
+        transparent 50px,
+        transparent 90px,
+
+        #b1060e 90px,
+        #b1060e 140px
+    );
+
+    transform: translateY(0);
+    /*flaot = flutua - pra cima e pra baixo
+    infinite alternate = faz com que ele volta e retorna e n corta a animação*/
+    animation: float 1s infinite alternate;
+
+    /*controlando a animação - float
+    do começo (0%) ao final (100%)*/
+}@keyframes float{
+    0%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(15px);
+    }
+}
+
+/*ternho q por contente = para configurar o pseu-do-codifgo*/
+/*configuração do pseu*/
+.netflix::before,
+.netflix::after{
+    content: "";
+    display: block;
+    position: absolute;
+}
+
+.netflix::before{
+    width: 50px;
+    height: 250px;
+    top: 0;
+    left: 45px;
+    background-color: #e50914;
+    /*É utilizado para “distorcer” os elementos, alterando os angulos = barra deitada*/
+    transform: skew(19.6deg);
+    box-shadow: 0 0 30px #000;
+}
+
+.netflix::after{
+    width: 190px;
+    height: 25px;
+    top: 245px;
+    left: -25px;
+    border-radius: 50%;
+    background-color: #000;
+}
+
+.shadow{
+    width: 140px;
+    height: 10px;
+    background-color: #e50914;
+    border-radius: 50%;
+    margin-top: 50px;
+    /*borras cor*/
+    filter: blur(7px);
+    /*shad = animação apra esquerda e diereita*/
+    animation: shad 1s infinite alternate;
+
+}@keyframes shad{
+    /*vai crescer em escala*/
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(.85);
+    }
+}
+
+/*
+    |\__/,|   (`\
+  _.|o o  |_   ) )
+-(((---(((-------- 𝒞𝑒𝓈𝒶𝓇 ℐ𝑔𝓁𝑒𝓈𝒾𝒶𝓈  */
+
+/**/
